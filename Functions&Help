@@ -1,0 +1,804 @@
+{
+ "cells": [
+  {
+   "cell_type": "markdown",
+   "id": "2b36b0c3",
+   "metadata": {
+    "papermill": {
+     "duration": 0.005219,
+     "end_time": "2025-01-20T19:59:28.373523",
+     "exception": false,
+     "start_time": "2025-01-20T19:59:28.368304",
+     "status": "completed"
+    },
+    "tags": []
+   },
+   "source": [
+    "**This notebook is an exercise in the [Python](https://www.kaggle.com/learn/python) course.  You can reference the tutorial at [this link](https://www.kaggle.com/colinmorris/functions-and-getting-help).**\n",
+    "\n",
+    "---\n"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "06de4339",
+   "metadata": {
+    "papermill": {
+     "duration": 0.003652,
+     "end_time": "2025-01-20T19:59:28.381463",
+     "exception": false,
+     "start_time": "2025-01-20T19:59:28.377811",
+     "status": "completed"
+    },
+    "tags": []
+   },
+   "source": [
+    "Functions are powerful. Try writing some yourself.\n",
+    "\n",
+    "As before, don't forget to run the setup code below before jumping into question 1."
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 1,
+   "id": "ddf431dc",
+   "metadata": {
+    "_kg_hide-input": true,
+    "_kg_hide-output": true,
+    "execution": {
+     "iopub.execute_input": "2025-01-20T19:59:28.390884Z",
+     "iopub.status.busy": "2025-01-20T19:59:28.390446Z",
+     "iopub.status.idle": "2025-01-20T19:59:29.364894Z",
+     "shell.execute_reply": "2025-01-20T19:59:29.363892Z"
+    },
+    "papermill": {
+     "duration": 0.981114,
+     "end_time": "2025-01-20T19:59:29.366591",
+     "exception": false,
+     "start_time": "2025-01-20T19:59:28.385477",
+     "status": "completed"
+    },
+    "tags": []
+   },
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "Setup complete.\n"
+     ]
+    }
+   ],
+   "source": [
+    "# SETUP. You don't need to worry for now about what this code does or how it works.\n",
+    "from learntools.core import binder; binder.bind(globals())\n",
+    "from learntools.python.ex2 import *\n",
+    "print('Setup complete.')"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "c8b74136",
+   "metadata": {
+    "papermill": {
+     "duration": 0.003839,
+     "end_time": "2025-01-20T19:59:29.374668",
+     "exception": false,
+     "start_time": "2025-01-20T19:59:29.370829",
+     "status": "completed"
+    },
+    "tags": []
+   },
+   "source": [
+    "# 1.\n",
+    "\n",
+    "Complete the body of the following function according to its docstring.\n",
+    "\n",
+    "HINT: Python has a built-in function `round`."
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 2,
+   "id": "4f94c58d",
+   "metadata": {
+    "execution": {
+     "iopub.execute_input": "2025-01-20T19:59:29.383967Z",
+     "iopub.status.busy": "2025-01-20T19:59:29.383442Z",
+     "iopub.status.idle": "2025-01-20T19:59:29.392120Z",
+     "shell.execute_reply": "2025-01-20T19:59:29.391123Z"
+    },
+    "papermill": {
+     "duration": 0.015278,
+     "end_time": "2025-01-20T19:59:29.393861",
+     "exception": false,
+     "start_time": "2025-01-20T19:59:29.378583",
+     "status": "completed"
+    },
+    "tags": []
+   },
+   "outputs": [
+    {
+     "data": {
+      "application/javascript": [
+       "parent.postMessage({\"jupyterEvent\": \"custom.exercise_interaction\", \"data\": {\"outcomeType\": 1, \"valueTowardsCompletion\": 0.16666666666666666, \"interactionType\": 1, \"questionType\": 2, \"questionId\": \"1_RoundFunctionProblem\", \"learnToolsVersion\": \"0.3.4\", \"failureMessage\": \"\", \"exceptionClass\": \"\", \"trace\": \"\"}}, \"*\")"
+      ],
+      "text/plain": [
+       "<IPython.core.display.Javascript object>"
+      ]
+     },
+     "metadata": {},
+     "output_type": "display_data"
+    },
+    {
+     "data": {
+      "text/markdown": [
+       "<span style=\"color:#33cc33\">Correct</span>"
+      ],
+      "text/plain": [
+       "Correct"
+      ]
+     },
+     "metadata": {},
+     "output_type": "display_data"
+    }
+   ],
+   "source": [
+    "def round_to_two_places(num):\n",
+    "    \"\"\"Return the given number rounded to two decimal places. \n",
+    "    \n",
+    "    >>> round_to_two_places(3.14159)\n",
+    "    3.14\n",
+    "    \"\"\"\n",
+    "    # Replace this body with your own code.\n",
+    "    # (\"pass\" is a keyword that does literally nothing. We used it as a placeholder\n",
+    "    # because after we begin a code block, Python requires at least one line of code)\n",
+    "    pass\n",
+    "    return round (num , 2)\n",
+    "\n",
+    "# Check your answer\n",
+    "q1.check()"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 3,
+   "id": "744ba1ca",
+   "metadata": {
+    "execution": {
+     "iopub.execute_input": "2025-01-20T19:59:29.404362Z",
+     "iopub.status.busy": "2025-01-20T19:59:29.404029Z",
+     "iopub.status.idle": "2025-01-20T19:59:29.413838Z",
+     "shell.execute_reply": "2025-01-20T19:59:29.412883Z"
+    },
+    "papermill": {
+     "duration": 0.016527,
+     "end_time": "2025-01-20T19:59:29.415167",
+     "exception": false,
+     "start_time": "2025-01-20T19:59:29.398640",
+     "status": "completed"
+    },
+    "tags": []
+   },
+   "outputs": [
+    {
+     "data": {
+      "application/javascript": [
+       "parent.postMessage({\"jupyterEvent\": \"custom.exercise_interaction\", \"data\": {\"interactionType\": 2, \"questionType\": 2, \"questionId\": \"1_RoundFunctionProblem\", \"learnToolsVersion\": \"0.3.4\", \"valueTowardsCompletion\": 0.0, \"failureMessage\": \"\", \"exceptionClass\": \"\", \"trace\": \"\", \"outcomeType\": 4}}, \"*\")"
+      ],
+      "text/plain": [
+       "<IPython.core.display.Javascript object>"
+      ]
+     },
+     "metadata": {},
+     "output_type": "display_data"
+    },
+    {
+     "data": {
+      "text/markdown": [
+       "<span style=\"color:#3366cc\">Hint:</span> Run `help(round)` in the console (or in a code cell) to learn more about the round function. You'll need to use the function's optional second argument."
+      ],
+      "text/plain": [
+       "Hint: Run `help(round)` in the console (or in a code cell) to learn more about the round function. You'll need to use the function's optional second argument."
+      ]
+     },
+     "metadata": {},
+     "output_type": "display_data"
+    },
+    {
+     "data": {
+      "application/javascript": [
+       "parent.postMessage({\"jupyterEvent\": \"custom.exercise_interaction\", \"data\": {\"interactionType\": 3, \"questionType\": 2, \"questionId\": \"1_RoundFunctionProblem\", \"learnToolsVersion\": \"0.3.4\", \"valueTowardsCompletion\": 0.0, \"failureMessage\": \"\", \"exceptionClass\": \"\", \"trace\": \"\", \"outcomeType\": 4}}, \"*\")"
+      ],
+      "text/plain": [
+       "<IPython.core.display.Javascript object>"
+      ]
+     },
+     "metadata": {},
+     "output_type": "display_data"
+    },
+    {
+     "data": {
+      "text/markdown": [
+       "<span style=\"color:#33cc99\">Solution:</span> \n",
+       "```python\n",
+       "return round(num, 2)\n",
+       "```"
+      ],
+      "text/plain": [
+       "Solution: \n",
+       "```python\n",
+       "return round(num, 2)\n",
+       "```"
+      ]
+     },
+     "metadata": {},
+     "output_type": "display_data"
+    }
+   ],
+   "source": [
+    "# Uncomment the following for a hint\n",
+    "q1.hint()\n",
+    "# Or uncomment the following to peek at the solution\n",
+    "q1.solution()"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "ce8bfc05",
+   "metadata": {
+    "papermill": {
+     "duration": 0.004343,
+     "end_time": "2025-01-20T19:59:29.424262",
+     "exception": false,
+     "start_time": "2025-01-20T19:59:29.419919",
+     "status": "completed"
+    },
+    "tags": []
+   },
+   "source": [
+    "# 2.\n",
+    "The help for `round` says that `ndigits` (the second argument) may be negative.\n",
+    "What do you think will happen when it is? Try some examples in the following cell."
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 4,
+   "id": "b055a15e",
+   "metadata": {
+    "execution": {
+     "iopub.execute_input": "2025-01-20T19:59:29.434815Z",
+     "iopub.status.busy": "2025-01-20T19:59:29.434442Z",
+     "iopub.status.idle": "2025-01-20T19:59:29.439770Z",
+     "shell.execute_reply": "2025-01-20T19:59:29.438904Z"
+    },
+    "papermill": {
+     "duration": 0.012534,
+     "end_time": "2025-01-20T19:59:29.441419",
+     "exception": false,
+     "start_time": "2025-01-20T19:59:29.428885",
+     "status": "completed"
+    },
+    "tags": []
+   },
+   "outputs": [
+    {
+     "data": {
+      "text/plain": [
+       "10.0"
+      ]
+     },
+     "execution_count": 4,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "# Put your test code here\n",
+    "round(5.7856 , -1)"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "63767761",
+   "metadata": {
+    "papermill": {
+     "duration": 0.00468,
+     "end_time": "2025-01-20T19:59:29.451017",
+     "exception": false,
+     "start_time": "2025-01-20T19:59:29.446337",
+     "status": "completed"
+    },
+    "tags": []
+   },
+   "source": [
+    "Can you think of a case where this would be useful?  Once you're ready, run the code cell below to see the answer and to receive credit for completing the problem."
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 5,
+   "id": "967aa670",
+   "metadata": {
+    "execution": {
+     "iopub.execute_input": "2025-01-20T19:59:29.461746Z",
+     "iopub.status.busy": "2025-01-20T19:59:29.461378Z",
+     "iopub.status.idle": "2025-01-20T19:59:29.468406Z",
+     "shell.execute_reply": "2025-01-20T19:59:29.467556Z"
+    },
+    "papermill": {
+     "duration": 0.01435,
+     "end_time": "2025-01-20T19:59:29.470092",
+     "exception": false,
+     "start_time": "2025-01-20T19:59:29.455742",
+     "status": "completed"
+    },
+    "tags": []
+   },
+   "outputs": [
+    {
+     "data": {
+      "application/javascript": [
+       "parent.postMessage({\"jupyterEvent\": \"custom.exercise_interaction\", \"data\": {\"interactionType\": 3, \"questionType\": 4, \"questionId\": \"2_RoundNdigitsProblem\", \"learnToolsVersion\": \"0.3.4\", \"valueTowardsCompletion\": 0.0, \"failureMessage\": \"\", \"exceptionClass\": \"\", \"trace\": \"\", \"outcomeType\": 4}}, \"*\")"
+      ],
+      "text/plain": [
+       "<IPython.core.display.Javascript object>"
+      ]
+     },
+     "metadata": {},
+     "output_type": "display_data"
+    },
+    {
+     "data": {
+      "text/markdown": [
+       "<span style=\"color:#33cc99\">Solution:</span> As you've seen, `ndigits=-1` rounds to the nearest 10, `ndigits=-2` rounds to the nearest 100 and so on. Where might this be useful? Suppose we're dealing with large numbers:\n",
+       "\n",
+       "> The area of Finland is 338,424 km²  \n",
+       "> The area of Greenland is 2,166,086 km²\n",
+       "\n",
+       "We probably don't care whether it's really 338,424, or 338,425, or 338,177. All those digits of accuracy are just distracting. We can chop them off by calling `round()` with `ndigits=-3`:\n",
+       "\n",
+       "> The area of Finland is 338,000 km²  \n",
+       "> The area of Greenland is 2,166,000 km²\n",
+       "\n",
+       "(We'll talk about how we would get the commas later when we talk about string formatting :))\n"
+      ],
+      "text/plain": [
+       "Solution: As you've seen, `ndigits=-1` rounds to the nearest 10, `ndigits=-2` rounds to the nearest 100 and so on. Where might this be useful? Suppose we're dealing with large numbers:\n",
+       "\n",
+       "> The area of Finland is 338,424 km²  \n",
+       "> The area of Greenland is 2,166,086 km²\n",
+       "\n",
+       "We probably don't care whether it's really 338,424, or 338,425, or 338,177. All those digits of accuracy are just distracting. We can chop them off by calling `round()` with `ndigits=-3`:\n",
+       "\n",
+       "> The area of Finland is 338,000 km²  \n",
+       "> The area of Greenland is 2,166,000 km²\n",
+       "\n",
+       "(We'll talk about how we would get the commas later when we talk about string formatting :))"
+      ]
+     },
+     "metadata": {},
+     "output_type": "display_data"
+    }
+   ],
+   "source": [
+    "# Check your answer (Run this code cell to receive credit!)\n",
+    "q2.solution()"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "b2d4cf78",
+   "metadata": {
+    "papermill": {
+     "duration": 0.004723,
+     "end_time": "2025-01-20T19:59:29.480036",
+     "exception": false,
+     "start_time": "2025-01-20T19:59:29.475313",
+     "status": "completed"
+    },
+    "tags": []
+   },
+   "source": [
+    "# 3.\n",
+    "\n",
+    "In the previous exercise, the candy-sharing friends Alice, Bob and Carol tried to split candies evenly. For the sake of their friendship, any candies left over would be smashed. For example, if they collectively bring home 91 candies, they'll take 30 each and smash 1.\n",
+    "\n",
+    "Below is a simple function that will calculate the number of candies to smash for *any* number of total candies.\n",
+    "\n",
+    "Modify it so that it optionally takes a second argument representing the number of friends the candies are being split between. If no second argument is provided, it should assume 3 friends, as before.\n",
+    "\n",
+    "Update the docstring to reflect this new behaviour."
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 6,
+   "id": "13d32e4a",
+   "metadata": {
+    "execution": {
+     "iopub.execute_input": "2025-01-20T19:59:29.491191Z",
+     "iopub.status.busy": "2025-01-20T19:59:29.490861Z",
+     "iopub.status.idle": "2025-01-20T19:59:29.498486Z",
+     "shell.execute_reply": "2025-01-20T19:59:29.497453Z"
+    },
+    "papermill": {
+     "duration": 0.014958,
+     "end_time": "2025-01-20T19:59:29.499934",
+     "exception": false,
+     "start_time": "2025-01-20T19:59:29.484976",
+     "status": "completed"
+    },
+    "tags": []
+   },
+   "outputs": [
+    {
+     "data": {
+      "application/javascript": [
+       "parent.postMessage({\"jupyterEvent\": \"custom.exercise_interaction\", \"data\": {\"outcomeType\": 1, \"valueTowardsCompletion\": 0.16666666666666666, \"interactionType\": 1, \"questionType\": 2, \"questionId\": \"3_CandySmashingFunctionProblem\", \"learnToolsVersion\": \"0.3.4\", \"failureMessage\": \"\", \"exceptionClass\": \"\", \"trace\": \"\"}}, \"*\")"
+      ],
+      "text/plain": [
+       "<IPython.core.display.Javascript object>"
+      ]
+     },
+     "metadata": {},
+     "output_type": "display_data"
+    },
+    {
+     "data": {
+      "text/markdown": [
+       "<span style=\"color:#33cc33\">Correct</span>"
+      ],
+      "text/plain": [
+       "Correct"
+      ]
+     },
+     "metadata": {},
+     "output_type": "display_data"
+    }
+   ],
+   "source": [
+    "def to_smash(total_candies , no_of_friends = 3):\n",
+    "    \"\"\"Return the number of leftover candies that must be smashed after distributing\n",
+    "    the given number of candies evenly between 3 friends.\n",
+    "    \n",
+    "    >>> to_smash(91)\n",
+    "    1\n",
+    "    \"\"\"\n",
+    "    return total_candies % no_of_friends\n",
+    "\n",
+    "# Check your answer\n",
+    "q3.check()"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 7,
+   "id": "40ec7603",
+   "metadata": {
+    "execution": {
+     "iopub.execute_input": "2025-01-20T19:59:29.511786Z",
+     "iopub.status.busy": "2025-01-20T19:59:29.511477Z",
+     "iopub.status.idle": "2025-01-20T19:59:29.518645Z",
+     "shell.execute_reply": "2025-01-20T19:59:29.517613Z"
+    },
+    "papermill": {
+     "duration": 0.014939,
+     "end_time": "2025-01-20T19:59:29.520268",
+     "exception": false,
+     "start_time": "2025-01-20T19:59:29.505329",
+     "status": "completed"
+    },
+    "tags": []
+   },
+   "outputs": [
+    {
+     "data": {
+      "application/javascript": [
+       "parent.postMessage({\"jupyterEvent\": \"custom.exercise_interaction\", \"data\": {\"interactionType\": 2, \"questionType\": 2, \"questionId\": \"3_CandySmashingFunctionProblem\", \"learnToolsVersion\": \"0.3.4\", \"valueTowardsCompletion\": 0.0, \"failureMessage\": \"\", \"exceptionClass\": \"\", \"trace\": \"\", \"outcomeType\": 4}}, \"*\")"
+      ],
+      "text/plain": [
+       "<IPython.core.display.Javascript object>"
+      ]
+     },
+     "metadata": {},
+     "output_type": "display_data"
+    },
+    {
+     "data": {
+      "text/markdown": [
+       "<span style=\"color:#3366cc\">Hint:</span> Refer to the section of the last tutorial notebook where we talked about default arguments"
+      ],
+      "text/plain": [
+       "Hint: Refer to the section of the last tutorial notebook where we talked about default arguments"
+      ]
+     },
+     "metadata": {},
+     "output_type": "display_data"
+    }
+   ],
+   "source": [
+    "q3.hint()"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 8,
+   "id": "d6a26790",
+   "metadata": {
+    "execution": {
+     "iopub.execute_input": "2025-01-20T19:59:29.532334Z",
+     "iopub.status.busy": "2025-01-20T19:59:29.532024Z",
+     "iopub.status.idle": "2025-01-20T19:59:29.538905Z",
+     "shell.execute_reply": "2025-01-20T19:59:29.537937Z"
+    },
+    "papermill": {
+     "duration": 0.014611,
+     "end_time": "2025-01-20T19:59:29.540519",
+     "exception": false,
+     "start_time": "2025-01-20T19:59:29.525908",
+     "status": "completed"
+    },
+    "tags": []
+   },
+   "outputs": [
+    {
+     "data": {
+      "application/javascript": [
+       "parent.postMessage({\"jupyterEvent\": \"custom.exercise_interaction\", \"data\": {\"interactionType\": 3, \"questionType\": 2, \"questionId\": \"3_CandySmashingFunctionProblem\", \"learnToolsVersion\": \"0.3.4\", \"valueTowardsCompletion\": 0.0, \"failureMessage\": \"\", \"exceptionClass\": \"\", \"trace\": \"\", \"outcomeType\": 4}}, \"*\")"
+      ],
+      "text/plain": [
+       "<IPython.core.display.Javascript object>"
+      ]
+     },
+     "metadata": {},
+     "output_type": "display_data"
+    },
+    {
+     "data": {
+      "text/markdown": [
+       "<span style=\"color:#33cc99\">Solution:</span> \n",
+       "```python\n",
+       "def to_smash(total_candies, n_friends=3):\n",
+       "    return total_candies % n_friends\n",
+       "```"
+      ],
+      "text/plain": [
+       "Solution: \n",
+       "```python\n",
+       "def to_smash(total_candies, n_friends=3):\n",
+       "    return total_candies % n_friends\n",
+       "```"
+      ]
+     },
+     "metadata": {},
+     "output_type": "display_data"
+    }
+   ],
+   "source": [
+    "q3.solution()"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "0d4eb816",
+   "metadata": {
+    "papermill": {
+     "duration": 0.005525,
+     "end_time": "2025-01-20T19:59:29.551893",
+     "exception": false,
+     "start_time": "2025-01-20T19:59:29.546368",
+     "status": "completed"
+    },
+    "tags": []
+   },
+   "source": [
+    "# 4. (Optional)\n",
+    "\n",
+    "It may not be fun, but reading and understanding error messages will be an important part of your Python career.\n",
+    "\n",
+    "Each code cell below contains some commented buggy code. For each cell...\n",
+    "\n",
+    "1. Read the code and predict what you think will happen when it's run.\n",
+    "2. Then uncomment the code and run it to see what happens. (**Tip**: In the kernel editor, you can highlight several lines and press `ctrl`+`/` to toggle commenting.)\n",
+    "3. Fix the code (so that it accomplishes its intended purpose without throwing an exception)\n",
+    "\n",
+    "<!-- TODO: should this be autochecked? Delta is probably pretty small. -->"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 9,
+   "id": "9ec4d476",
+   "metadata": {
+    "execution": {
+     "iopub.execute_input": "2025-01-20T19:59:29.564460Z",
+     "iopub.status.busy": "2025-01-20T19:59:29.564063Z",
+     "iopub.status.idle": "2025-01-20T19:59:29.569296Z",
+     "shell.execute_reply": "2025-01-20T19:59:29.568329Z"
+    },
+    "papermill": {
+     "duration": 0.013232,
+     "end_time": "2025-01-20T19:59:29.570732",
+     "exception": false,
+     "start_time": "2025-01-20T19:59:29.557500",
+     "status": "completed"
+    },
+    "tags": []
+   },
+   "outputs": [
+    {
+     "data": {
+      "text/plain": [
+       "10.0"
+      ]
+     },
+     "execution_count": 9,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "# ruound_to_two_places(9.9999)\n",
+    "round (9.9999, 2)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 10,
+   "id": "b7d18a7f",
+   "metadata": {
+    "execution": {
+     "iopub.execute_input": "2025-01-20T19:59:29.583579Z",
+     "iopub.status.busy": "2025-01-20T19:59:29.583212Z",
+     "iopub.status.idle": "2025-01-20T19:59:29.588345Z",
+     "shell.execute_reply": "2025-01-20T19:59:29.587111Z"
+    },
+    "papermill": {
+     "duration": 0.013547,
+     "end_time": "2025-01-20T19:59:29.590029",
+     "exception": false,
+     "start_time": "2025-01-20T19:59:29.576482",
+     "status": "completed"
+    },
+    "tags": []
+   },
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "5\n"
+     ]
+    }
+   ],
+   "source": [
+    "x = -10\n",
+    "y = 5\n",
+    "# Which of the two variables above has the smallest absolute value?\n",
+    "smallest_abs = min(abs(x), abs(y))\n",
+    "print (smallest_abs)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 11,
+   "id": "57ed7614",
+   "metadata": {
+    "execution": {
+     "iopub.execute_input": "2025-01-20T19:59:29.602748Z",
+     "iopub.status.busy": "2025-01-20T19:59:29.602411Z",
+     "iopub.status.idle": "2025-01-20T19:59:29.607042Z",
+     "shell.execute_reply": "2025-01-20T19:59:29.605943Z"
+    },
+    "papermill": {
+     "duration": 0.012889,
+     "end_time": "2025-01-20T19:59:29.608784",
+     "exception": false,
+     "start_time": "2025-01-20T19:59:29.595895",
+     "status": "completed"
+    },
+    "tags": []
+   },
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "5\n"
+     ]
+    }
+   ],
+   "source": [
+    "def f(x):\n",
+    "    y = abs(x)\n",
+    "    return y\n",
+    "\n",
+    "print(f(5))"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "1d93b0e4",
+   "metadata": {
+    "papermill": {
+     "duration": 0.005563,
+     "end_time": "2025-01-20T19:59:29.620254",
+     "exception": false,
+     "start_time": "2025-01-20T19:59:29.614691",
+     "status": "completed"
+    },
+    "tags": []
+   },
+   "source": [
+    "# Keep Going\n",
+    "\n",
+    "Nice job with the code. Next up, you'll learn about *conditionals*, which you'll need to **[write interesting programs](https://www.kaggle.com/colinmorris/booleans-and-conditionals)**. "
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "bdfe7bda",
+   "metadata": {
+    "papermill": {
+     "duration": 0.005527,
+     "end_time": "2025-01-20T19:59:29.631736",
+     "exception": false,
+     "start_time": "2025-01-20T19:59:29.626209",
+     "status": "completed"
+    },
+    "tags": []
+   },
+   "source": [
+    "---\n",
+    "\n",
+    "\n",
+    "\n",
+    "\n",
+    "*Have questions or comments? Visit the [course discussion forum](https://www.kaggle.com/learn/python/discussion) to chat with other learners.*"
+   ]
+  }
+ ],
+ "metadata": {
+  "kaggle": {
+   "accelerator": "none",
+   "dataSources": [],
+   "isGpuEnabled": false,
+   "isInternetEnabled": true,
+   "language": "python",
+   "sourceType": "notebook"
+  },
+  "kernelspec": {
+   "display_name": "Python 3",
+   "language": "python",
+   "name": "python3"
+  },
+  "language_info": {
+   "codemirror_mode": {
+    "name": "ipython",
+    "version": 3
+   },
+   "file_extension": ".py",
+   "mimetype": "text/x-python",
+   "name": "python",
+   "nbconvert_exporter": "python",
+   "pygments_lexer": "ipython3",
+   "version": "3.10.12"
+  },
+  "papermill": {
+   "default_parameters": {},
+   "duration": 4.562475,
+   "end_time": "2025-01-20T19:59:30.157649",
+   "environment_variables": {},
+   "exception": null,
+   "input_path": "__notebook__.ipynb",
+   "output_path": "__notebook__.ipynb",
+   "parameters": {},
+   "start_time": "2025-01-20T19:59:25.595174",
+   "version": "2.6.0"
+  }
+ },
+ "nbformat": 4,
+ "nbformat_minor": 5
+}
