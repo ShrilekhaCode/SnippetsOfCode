@@ -1,1 +1,618 @@
-{"metadata":{"kernelspec":{"language":"python","display_name":"Python 3","name":"python3"},"language_info":{"pygments_lexer":"ipython3","nbconvert_exporter":"python","version":"3.6.4","file_extension":".py","codemirror_mode":{"name":"ipython","version":3},"name":"python","mimetype":"text/x-python"},"kaggle":{"accelerator":"none","dataSources":[],"isInternetEnabled":true,"language":"python","sourceType":"notebook","isGpuEnabled":false}},"nbformat_minor":4,"nbformat":4,"cells":[{"cell_type":"markdown","source":"**This notebook is an exercise in the [Python](https://www.kaggle.com/learn/python) course.  You can reference the tutorial at [this link](https://www.kaggle.com/colinmorris/loops-and-list-comprehensions).**\n\n---\n","metadata":{}},{"cell_type":"markdown","source":"With all you've learned, you can start writing much more interesting programs. See if you can solve the problems below.\n\nAs always, run the setup code below before working on the questions.","metadata":{}},{"cell_type":"code","source":"from learntools.core import binder; binder.bind(globals())\nfrom learntools.python.ex5 import *\nprint('Setup complete.')","metadata":{"execution":{"iopub.status.busy":"2022-08-30T05:07:59.394493Z","iopub.execute_input":"2022-08-30T05:07:59.395031Z","iopub.status.idle":"2022-08-30T05:07:59.472410Z","shell.execute_reply.started":"2022-08-30T05:07:59.394936Z","shell.execute_reply":"2022-08-30T05:07:59.470913Z"},"trusted":true},"outputs":[],"execution_count":null},{"cell_type":"markdown","source":"# 1.\n\nHave you ever felt debugging involved a bit of luck? The following program has a bug. Try to identify the bug and fix it.","metadata":{}},{"cell_type":"code","source":"def has_lucky_number(nums):\n    \"\"\"Return whether the given list of numbers is lucky. A lucky list contains\n    at least one number divisible by 7.\n    \"\"\"\n    for num in nums:\n        if num % 7 == 0:\n            return True\n        else:\n            return False","metadata":{},"outputs":[],"execution_count":null},{"cell_type":"markdown","source":"Try to identify the bug and fix it in the cell below:","metadata":{}},{"cell_type":"code","source":"def has_lucky_number(nums):\n    \"\"\"Return whether the given list of numbers is lucky. A lucky list contains\n    at least one number divisible by 7.\n    \"\"\"\n    for num in nums:\n        if num % 7 == 0:\n            return True\n        #else:\n    return False\n   \n\n# Check your answer\nq1.check()","metadata":{"execution":{"iopub.status.busy":"2022-08-30T03:52:28.048578Z","iopub.execute_input":"2022-08-30T03:52:28.049343Z","iopub.status.idle":"2022-08-30T03:52:28.063821Z","shell.execute_reply.started":"2022-08-30T03:52:28.049296Z","shell.execute_reply":"2022-08-30T03:52:28.062835Z"},"trusted":true},"outputs":[],"execution_count":null},{"cell_type":"code","source":"q1.hint()\nq1.solution()","metadata":{"execution":{"iopub.status.busy":"2022-08-29T14:11:13.566666Z","iopub.execute_input":"2022-08-29T14:11:13.567075Z","iopub.status.idle":"2022-08-29T14:11:13.582131Z","shell.execute_reply.started":"2022-08-29T14:11:13.567044Z","shell.execute_reply":"2022-08-29T14:11:13.580786Z"},"trusted":true},"outputs":[],"execution_count":null},{"cell_type":"markdown","source":"# 2.\nLook at the Python expression below. What do you think we'll get when we run it? When you've made your prediction, uncomment the code and run the cell to see if you were right.","metadata":{}},{"cell_type":"code","source":"[1, 2, 3, 4] > 2","metadata":{"execution":{"iopub.status.busy":"2022-08-30T03:52:53.047785Z","iopub.execute_input":"2022-08-30T03:52:53.048198Z","iopub.status.idle":"2022-08-30T03:52:53.117744Z","shell.execute_reply.started":"2022-08-30T03:52:53.048167Z","shell.execute_reply":"2022-08-30T03:52:53.116647Z"},"trusted":true},"outputs":[],"execution_count":null},{"cell_type":"markdown","source":"R and Python have some libraries (like numpy and pandas) compare each element of the list to 2 (i.e. do an 'element-wise' comparison) and give us a list of booleans like `[False, False, True, True]`. \n\nImplement a function that reproduces this behaviour, returning a list of booleans corresponding to whether the corresponding element is greater than n.","metadata":{}},{"cell_type":"code","source":"def elementwise_greater_than(L, thresh):\n    \"\"\"Return a list with the same length as L, where the value at index i is \n    True if L[i] is greater than thresh, and False otherwise.\n    \n    >>> elementwise_greater_than([1, 2, 3, 4], 2)\n    [False, False, True, True]\n    \"\"\"\n    return ([n > thresh for n in L ])\n    pass\n\n# Check your answer\nq2.check()","metadata":{"execution":{"iopub.status.busy":"2022-08-30T03:57:47.742694Z","iopub.execute_input":"2022-08-30T03:57:47.743115Z","iopub.status.idle":"2022-08-30T03:57:47.753483Z","shell.execute_reply.started":"2022-08-30T03:57:47.743080Z","shell.execute_reply":"2022-08-30T03:57:47.752330Z"},"trusted":true},"outputs":[],"execution_count":null},{"cell_type":"code","source":"q2.solution()","metadata":{"execution":{"iopub.status.busy":"2022-08-30T03:58:24.364973Z","iopub.execute_input":"2022-08-30T03:58:24.365940Z","iopub.status.idle":"2022-08-30T03:58:24.375357Z","shell.execute_reply.started":"2022-08-30T03:58:24.365871Z","shell.execute_reply":"2022-08-30T03:58:24.374495Z"},"trusted":true},"outputs":[],"execution_count":null},{"cell_type":"markdown","source":"# 3.\n\nComplete the body of the function below according to its docstring.","metadata":{}},{"cell_type":"code","source":"def menu_is_boring(meals):\n    \"\"\"Given a list of meals served over some period of time, return True if the\n    same meal has ever been served two days in a row, and False otherwise.\n    \"\"\"\n    pass\n    #for n in meals :\n    #    if meals.count(n) > 1:\n    #        return True\n    \n    #return any([meals.count(n) > 1 for n in meals])\n    \n    for i in range(len(meals)-1):\n        if meals[i] == meals[i+1]:\n              return True\n    return False\n# Check your answer\nq3.check()","metadata":{"execution":{"iopub.status.busy":"2022-08-30T05:38:54.704226Z","iopub.execute_input":"2022-08-30T05:38:54.705720Z","iopub.status.idle":"2022-08-30T05:38:54.718197Z","shell.execute_reply.started":"2022-08-30T05:38:54.705675Z","shell.execute_reply":"2022-08-30T05:38:54.717338Z"},"trusted":true},"outputs":[],"execution_count":null},{"cell_type":"code","source":"q3.hint()\nq3.solution()","metadata":{"execution":{"iopub.status.busy":"2022-08-30T05:15:12.247501Z","iopub.execute_input":"2022-08-30T05:15:12.248769Z","iopub.status.idle":"2022-08-30T05:15:12.263023Z","shell.execute_reply.started":"2022-08-30T05:15:12.248725Z","shell.execute_reply":"2022-08-30T05:15:12.261843Z"},"trusted":true},"outputs":[],"execution_count":null},{"cell_type":"markdown","source":"# 4. <span title=\"A bit spicy\" style=\"color: darkgreen \">🌶️</span>\n\nNext to the Blackjack table, the Python Challenge Casino has a slot machine. You can get a result from the slot machine by calling `play_slot_machine()`. The number it returns is your winnings in dollars. Usually it returns 0.  But sometimes you'll get lucky and get a big payday. Try running it below:","metadata":{}},{"cell_type":"code","source":"play_slot_machine()","metadata":{"execution":{"iopub.status.busy":"2022-08-30T05:46:45.002647Z","iopub.execute_input":"2022-08-30T05:46:45.003101Z","iopub.status.idle":"2022-08-30T05:46:45.012044Z","shell.execute_reply.started":"2022-08-30T05:46:45.003068Z","shell.execute_reply":"2022-08-30T05:46:45.010791Z"},"trusted":true},"outputs":[],"execution_count":null},{"cell_type":"markdown","source":"By the way, did we mention that each play costs $1? Don't worry, we'll send you the bill later.\n\nOn average, how much money can you expect to gain (or lose) every time you play the machine?  The casino keeps it a secret, but you can estimate the average value of each pull using a technique called the **Monte Carlo method**. To estimate the average outcome, we simulate the scenario many times, and return the average result.\n\nComplete the following function to calculate the average value per play of the slot machine.","metadata":{}},{"cell_type":"code","source":"def estimate_average_slot_payout(n_runs):\n    \"\"\"Run the slot machine n_runs times and return the average net profit per run.\n    Example calls (note that return value is nondeterministic!):\n    >>> estimate_average_slot_payout(1)\n    -1\n    >>> estimate_average_slot_payout(1)\n    0.5\n    \"\"\"\n    temp = [play_slot_machine() for i in range(n_runs)]\n    avg_payout = sum(temp)/n_runs\n    return avg_payout\n    ","metadata":{"execution":{"iopub.status.busy":"2022-08-30T05:48:49.008814Z","iopub.execute_input":"2022-08-30T05:48:49.009274Z","iopub.status.idle":"2022-08-30T05:48:49.019956Z","shell.execute_reply.started":"2022-08-30T05:48:49.009239Z","shell.execute_reply":"2022-08-30T05:48:49.017588Z"},"trusted":true},"outputs":[],"execution_count":null},{"cell_type":"markdown","source":"When you think you know the expected value per spin, run the code cell below to view the solution and get credit for answering the question.","metadata":{}},{"cell_type":"code","source":"# Check your answer (Run this code cell to receive credit!)\nq4.solution()","metadata":{"execution":{"iopub.status.busy":"2022-08-30T05:42:19.330976Z","iopub.execute_input":"2022-08-30T05:42:19.331415Z","iopub.status.idle":"2022-08-30T05:42:19.341791Z","shell.execute_reply.started":"2022-08-30T05:42:19.331384Z","shell.execute_reply":"2022-08-30T05:42:19.340796Z"},"trusted":true},"outputs":[],"execution_count":null},{"cell_type":"markdown","source":"# Keep Going\n\nMany programmers report that dictionaries are their favorite data structure. You'll get to **[learn about them](https://www.kaggle.com/colinmorris/strings-and-dictionaries)** (as well as strings) in the next lesson.","metadata":{}},{"cell_type":"markdown","source":"---\n\n\n\n\n*Have questions or comments? Visit the [course discussion forum](https://www.kaggle.com/learn/python/discussion) to chat with other learners.*","metadata":{}}]}
+{
+ "cells": [
+  {
+   "cell_type": "markdown",
+   "id": "8f5d4293",
+   "metadata": {
+    "papermill": {
+     "duration": 0.006728,
+     "end_time": "2025-01-20T19:44:12.043807",
+     "exception": false,
+     "start_time": "2025-01-20T19:44:12.037079",
+     "status": "completed"
+    },
+    "tags": []
+   },
+   "source": [
+    "**This notebook is an exercise in the [Python](https://www.kaggle.com/learn/python) course.  You can reference the tutorial at [this link](https://www.kaggle.com/colinmorris/loops-and-list-comprehensions).**\n",
+    "\n",
+    "---\n"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "2ba46df8",
+   "metadata": {
+    "papermill": {
+     "duration": 0.004042,
+     "end_time": "2025-01-20T19:44:12.052496",
+     "exception": false,
+     "start_time": "2025-01-20T19:44:12.048454",
+     "status": "completed"
+    },
+    "tags": []
+   },
+   "source": [
+    "With all you've learned, you can start writing much more interesting programs. See if you can solve the problems below.\n",
+    "\n",
+    "As always, run the setup code below before working on the questions."
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "60066432",
+   "metadata": {
+    "execution": {
+     "iopub.execute_input": "2022-08-30T05:07:59.395031Z",
+     "iopub.status.busy": "2022-08-30T05:07:59.394493Z",
+     "iopub.status.idle": "2022-08-30T05:07:59.472410Z",
+     "shell.execute_reply": "2022-08-30T05:07:59.470913Z",
+     "shell.execute_reply.started": "2022-08-30T05:07:59.394936Z"
+    },
+    "papermill": {
+     "duration": 0.004066,
+     "end_time": "2025-01-20T19:44:12.060846",
+     "exception": false,
+     "start_time": "2025-01-20T19:44:12.056780",
+     "status": "completed"
+    },
+    "tags": []
+   },
+   "source": [
+    "from learntools.core import binder; binder.bind(globals())\n",
+    "from learntools.python.ex5 import *\n",
+    "print('Setup complete.')"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "7aa165e8",
+   "metadata": {
+    "papermill": {
+     "duration": 0.003914,
+     "end_time": "2025-01-20T19:44:12.068999",
+     "exception": false,
+     "start_time": "2025-01-20T19:44:12.065085",
+     "status": "completed"
+    },
+    "tags": []
+   },
+   "source": [
+    "# 1.\n",
+    "\n",
+    "Have you ever felt debugging involved a bit of luck? The following program has a bug. Try to identify the bug and fix it."
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "13ad04c6",
+   "metadata": {
+    "papermill": {
+     "duration": 0.003932,
+     "end_time": "2025-01-20T19:44:12.077045",
+     "exception": false,
+     "start_time": "2025-01-20T19:44:12.073113",
+     "status": "completed"
+    },
+    "tags": []
+   },
+   "source": [
+    "def has_lucky_number(nums):\n",
+    "    \"\"\"Return whether the given list of numbers is lucky. A lucky list contains\n",
+    "    at least one number divisible by 7.\n",
+    "    \"\"\"\n",
+    "    for num in nums:\n",
+    "        if num % 7 == 0:\n",
+    "            return True\n",
+    "        else:\n",
+    "            return False"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "1a159808",
+   "metadata": {
+    "papermill": {
+     "duration": 0.003954,
+     "end_time": "2025-01-20T19:44:12.085171",
+     "exception": false,
+     "start_time": "2025-01-20T19:44:12.081217",
+     "status": "completed"
+    },
+    "tags": []
+   },
+   "source": [
+    "Try to identify the bug and fix it in the cell below:"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "0baa9222",
+   "metadata": {
+    "execution": {
+     "iopub.execute_input": "2022-08-30T03:52:28.049343Z",
+     "iopub.status.busy": "2022-08-30T03:52:28.048578Z",
+     "iopub.status.idle": "2022-08-30T03:52:28.063821Z",
+     "shell.execute_reply": "2022-08-30T03:52:28.062835Z",
+     "shell.execute_reply.started": "2022-08-30T03:52:28.049296Z"
+    },
+    "papermill": {
+     "duration": 0.003921,
+     "end_time": "2025-01-20T19:44:12.093278",
+     "exception": false,
+     "start_time": "2025-01-20T19:44:12.089357",
+     "status": "completed"
+    },
+    "tags": []
+   },
+   "source": [
+    "def has_lucky_number(nums):\n",
+    "    \"\"\"Return whether the given list of numbers is lucky. A lucky list contains\n",
+    "    at least one number divisible by 7.\n",
+    "    \"\"\"\n",
+    "    for num in nums:\n",
+    "        if num % 7 == 0:\n",
+    "            return True\n",
+    "        #else:\n",
+    "    return False\n",
+    "   \n",
+    "\n",
+    "# Check your answer\n",
+    "q1.check()"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 1,
+   "id": "c5138e04",
+   "metadata": {
+    "execution": {
+     "iopub.execute_input": "2025-01-20T19:44:12.103106Z",
+     "iopub.status.busy": "2025-01-20T19:44:12.102789Z",
+     "iopub.status.idle": "2025-01-20T19:44:12.107642Z",
+     "shell.execute_reply": "2025-01-20T19:44:12.106807Z"
+    },
+    "papermill": {
+     "duration": 0.012132,
+     "end_time": "2025-01-20T19:44:12.109472",
+     "exception": false,
+     "start_time": "2025-01-20T19:44:12.097340",
+     "status": "completed"
+    },
+    "tags": []
+   },
+   "outputs": [],
+   "source": [
+    "#q1.hint()\n",
+    "#q1.solution()"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "b09e2c9d",
+   "metadata": {
+    "papermill": {
+     "duration": 0.003882,
+     "end_time": "2025-01-20T19:44:12.117768",
+     "exception": false,
+     "start_time": "2025-01-20T19:44:12.113886",
+     "status": "completed"
+    },
+    "tags": []
+   },
+   "source": [
+    "# 2.\n",
+    "Look at the Python expression below. What do you think we'll get when we run it? When you've made your prediction, uncomment the code and run the cell to see if you were right."
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "d91517ca",
+   "metadata": {
+    "execution": {
+     "iopub.execute_input": "2022-08-30T03:52:53.048198Z",
+     "iopub.status.busy": "2022-08-30T03:52:53.047785Z",
+     "iopub.status.idle": "2022-08-30T03:52:53.117744Z",
+     "shell.execute_reply": "2022-08-30T03:52:53.116647Z",
+     "shell.execute_reply.started": "2022-08-30T03:52:53.048167Z"
+    },
+    "papermill": {
+     "duration": 0.003826,
+     "end_time": "2025-01-20T19:44:12.125660",
+     "exception": false,
+     "start_time": "2025-01-20T19:44:12.121834",
+     "status": "completed"
+    },
+    "tags": []
+   },
+   "source": [
+    "[1, 2, 3, 4] > 2"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "d2c87e82",
+   "metadata": {
+    "papermill": {
+     "duration": 0.003752,
+     "end_time": "2025-01-20T19:44:12.133421",
+     "exception": false,
+     "start_time": "2025-01-20T19:44:12.129669",
+     "status": "completed"
+    },
+    "tags": []
+   },
+   "source": [
+    "R and Python have some libraries (like numpy and pandas) compare each element of the list to 2 (i.e. do an 'element-wise' comparison) and give us a list of booleans like `[False, False, True, True]`. \n",
+    "\n",
+    "Implement a function that reproduces this behaviour, returning a list of booleans corresponding to whether the corresponding element is greater than n."
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "2981bb20",
+   "metadata": {
+    "execution": {
+     "iopub.execute_input": "2022-08-30T03:57:47.743115Z",
+     "iopub.status.busy": "2022-08-30T03:57:47.742694Z",
+     "iopub.status.idle": "2022-08-30T03:57:47.753483Z",
+     "shell.execute_reply": "2022-08-30T03:57:47.752330Z",
+     "shell.execute_reply.started": "2022-08-30T03:57:47.743080Z"
+    },
+    "papermill": {
+     "duration": 0.003896,
+     "end_time": "2025-01-20T19:44:12.141369",
+     "exception": false,
+     "start_time": "2025-01-20T19:44:12.137473",
+     "status": "completed"
+    },
+    "tags": []
+   },
+   "source": [
+    "def elementwise_greater_than(L, thresh):\n",
+    "    \"\"\"Return a list with the same length as L, where the value at index i is \n",
+    "    True if L[i] is greater than thresh, and False otherwise.\n",
+    "    \n",
+    "    >>> elementwise_greater_than([1, 2, 3, 4], 2)\n",
+    "    [False, False, True, True]\n",
+    "    \"\"\"\n",
+    "    return ([n > thresh for n in L ])\n",
+    "    pass\n",
+    "\n",
+    "# Check your answer\n",
+    "q2.check()"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "53c815ad",
+   "metadata": {
+    "execution": {
+     "iopub.execute_input": "2022-08-30T03:58:24.365940Z",
+     "iopub.status.busy": "2022-08-30T03:58:24.364973Z",
+     "iopub.status.idle": "2022-08-30T03:58:24.375357Z",
+     "shell.execute_reply": "2022-08-30T03:58:24.374495Z",
+     "shell.execute_reply.started": "2022-08-30T03:58:24.365871Z"
+    },
+    "papermill": {
+     "duration": 0.003765,
+     "end_time": "2025-01-20T19:44:12.149172",
+     "exception": false,
+     "start_time": "2025-01-20T19:44:12.145407",
+     "status": "completed"
+    },
+    "tags": []
+   },
+   "source": [
+    "#q2.solution()"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "ea2767ff",
+   "metadata": {
+    "papermill": {
+     "duration": 0.003991,
+     "end_time": "2025-01-20T19:44:12.157110",
+     "exception": false,
+     "start_time": "2025-01-20T19:44:12.153119",
+     "status": "completed"
+    },
+    "tags": []
+   },
+   "source": [
+    "# 3.\n",
+    "\n",
+    "Complete the body of the function below according to its docstring."
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "444fa16b",
+   "metadata": {
+    "execution": {
+     "iopub.execute_input": "2022-08-30T05:38:54.705720Z",
+     "iopub.status.busy": "2022-08-30T05:38:54.704226Z",
+     "iopub.status.idle": "2022-08-30T05:38:54.718197Z",
+     "shell.execute_reply": "2022-08-30T05:38:54.717338Z",
+     "shell.execute_reply.started": "2022-08-30T05:38:54.705675Z"
+    },
+    "papermill": {
+     "duration": 0.003872,
+     "end_time": "2025-01-20T19:44:12.165160",
+     "exception": false,
+     "start_time": "2025-01-20T19:44:12.161288",
+     "status": "completed"
+    },
+    "tags": []
+   },
+   "source": [
+    "def menu_is_boring(meals):\n",
+    "    \"\"\"Given a list of meals served over some period of time, return True if the\n",
+    "    same meal has ever been served two days in a row, and False otherwise.\n",
+    "    \"\"\"\n",
+    "    pass\n",
+    "    #for n in meals :\n",
+    "    #    if meals.count(n) > 1:\n",
+    "    #        return True\n",
+    "    \n",
+    "    #return any([meals.count(n) > 1 for n in meals])\n",
+    "    \n",
+    "    for i in range(len(meals)-1):\n",
+    "        if meals[i] == meals[i+1]:\n",
+    "              return True\n",
+    "    return False\n",
+    "# Check your answer\n",
+    "q3.check()"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "83e2c7eb",
+   "metadata": {
+    "execution": {
+     "iopub.execute_input": "2022-08-30T05:15:12.248769Z",
+     "iopub.status.busy": "2022-08-30T05:15:12.247501Z",
+     "iopub.status.idle": "2022-08-30T05:15:12.263023Z",
+     "shell.execute_reply": "2022-08-30T05:15:12.261843Z",
+     "shell.execute_reply.started": "2022-08-30T05:15:12.248725Z"
+    },
+    "papermill": {
+     "duration": 0.003775,
+     "end_time": "2025-01-20T19:44:12.173044",
+     "exception": false,
+     "start_time": "2025-01-20T19:44:12.169269",
+     "status": "completed"
+    },
+    "tags": []
+   },
+   "source": [
+    "#q3.hint()\n",
+    "#q3.solution()"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "c122ea06",
+   "metadata": {
+    "papermill": {
+     "duration": 0.003906,
+     "end_time": "2025-01-20T19:44:12.180942",
+     "exception": false,
+     "start_time": "2025-01-20T19:44:12.177036",
+     "status": "completed"
+    },
+    "tags": []
+   },
+   "source": [
+    "# 4. <span title=\"A bit spicy\" style=\"color: darkgreen \">🌶️</span>\n",
+    "\n",
+    "Next to the Blackjack table, the Python Challenge Casino has a slot machine. You can get a result from the slot machine by calling `play_slot_machine()`. The number it returns is your winnings in dollars. Usually it returns 0.  But sometimes you'll get lucky and get a big payday. Try running it below:"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "946f15b1",
+   "metadata": {
+    "execution": {
+     "iopub.execute_input": "2022-08-30T05:46:45.003101Z",
+     "iopub.status.busy": "2022-08-30T05:46:45.002647Z",
+     "iopub.status.idle": "2022-08-30T05:46:45.012044Z",
+     "shell.execute_reply": "2022-08-30T05:46:45.010791Z",
+     "shell.execute_reply.started": "2022-08-30T05:46:45.003068Z"
+    },
+    "papermill": {
+     "duration": 0.003805,
+     "end_time": "2025-01-20T19:44:12.188774",
+     "exception": false,
+     "start_time": "2025-01-20T19:44:12.184969",
+     "status": "completed"
+    },
+    "tags": []
+   },
+   "source": [
+    "play_slot_machine()"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "3c27a862",
+   "metadata": {
+    "papermill": {
+     "duration": 0.00381,
+     "end_time": "2025-01-20T19:44:12.196609",
+     "exception": false,
+     "start_time": "2025-01-20T19:44:12.192799",
+     "status": "completed"
+    },
+    "tags": []
+   },
+   "source": [
+    "By the way, did we mention that each play costs $1? Don't worry, we'll send you the bill later.\n",
+    "\n",
+    "On average, how much money can you expect to gain (or lose) every time you play the machine?  The casino keeps it a secret, but you can estimate the average value of each pull using a technique called the **Monte Carlo method**. To estimate the average outcome, we simulate the scenario many times, and return the average result.\n",
+    "\n",
+    "Complete the following function to calculate the average value per play of the slot machine."
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "7f9cea27",
+   "metadata": {
+    "execution": {
+     "iopub.execute_input": "2022-08-30T05:48:49.009274Z",
+     "iopub.status.busy": "2022-08-30T05:48:49.008814Z",
+     "iopub.status.idle": "2022-08-30T05:48:49.019956Z",
+     "shell.execute_reply": "2022-08-30T05:48:49.017588Z",
+     "shell.execute_reply.started": "2022-08-30T05:48:49.009239Z"
+    },
+    "papermill": {
+     "duration": 0.003852,
+     "end_time": "2025-01-20T19:44:12.204774",
+     "exception": false,
+     "start_time": "2025-01-20T19:44:12.200922",
+     "status": "completed"
+    },
+    "tags": []
+   },
+   "source": [
+    "def estimate_average_slot_payout(n_runs):\n",
+    "    \"\"\"Run the slot machine n_runs times and return the average net profit per run.\n",
+    "    Example calls (note that return value is nondeterministic!):\n",
+    "    >>> estimate_average_slot_payout(1)\n",
+    "    -1\n",
+    "    >>> estimate_average_slot_payout(1)\n",
+    "    0.5\n",
+    "    \"\"\"\n",
+    "    temp = [play_slot_machine() for i in range(n_runs)]\n",
+    "    avg_payout = sum(temp)/n_runs\n",
+    "    return avg_payout\n",
+    "    "
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "800654c1",
+   "metadata": {
+    "papermill": {
+     "duration": 0.003778,
+     "end_time": "2025-01-20T19:44:12.212551",
+     "exception": false,
+     "start_time": "2025-01-20T19:44:12.208773",
+     "status": "completed"
+    },
+    "tags": []
+   },
+   "source": [
+    "When you think you know the expected value per spin, run the code cell below to view the solution and get credit for answering the question."
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "b6431fa9",
+   "metadata": {
+    "execution": {
+     "iopub.execute_input": "2022-08-30T05:42:19.331415Z",
+     "iopub.status.busy": "2022-08-30T05:42:19.330976Z",
+     "iopub.status.idle": "2022-08-30T05:42:19.341791Z",
+     "shell.execute_reply": "2022-08-30T05:42:19.340796Z",
+     "shell.execute_reply.started": "2022-08-30T05:42:19.331384Z"
+    },
+    "papermill": {
+     "duration": 0.003999,
+     "end_time": "2025-01-20T19:44:12.220560",
+     "exception": false,
+     "start_time": "2025-01-20T19:44:12.216561",
+     "status": "completed"
+    },
+    "tags": []
+   },
+   "source": [
+    "# Check your answer (Run this code cell to receive credit!)\n",
+    "3q4.solution()"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "9c5aa2e7",
+   "metadata": {
+    "papermill": {
+     "duration": 0.003786,
+     "end_time": "2025-01-20T19:44:12.228276",
+     "exception": false,
+     "start_time": "2025-01-20T19:44:12.224490",
+     "status": "completed"
+    },
+    "tags": []
+   },
+   "source": [
+    "# Keep Going\n",
+    "\n",
+    "Many programmers report that dictionaries are their favorite data structure. You'll get to **[learn about them](https://www.kaggle.com/colinmorris/strings-and-dictionaries)** (as well as strings) in the next lesson."
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "7aab6995",
+   "metadata": {
+    "papermill": {
+     "duration": 0.003734,
+     "end_time": "2025-01-20T19:44:12.235954",
+     "exception": false,
+     "start_time": "2025-01-20T19:44:12.232220",
+     "status": "completed"
+    },
+    "tags": []
+   },
+   "source": [
+    "---\n",
+    "\n",
+    "\n",
+    "\n",
+    "\n",
+    "*Have questions or comments? Visit the [course discussion forum](https://www.kaggle.com/learn/python/discussion) to chat with other learners.*"
+   ]
+  }
+ ],
+ "metadata": {
+  "kaggle": {
+   "accelerator": "none",
+   "dataSources": [],
+   "isGpuEnabled": false,
+   "isInternetEnabled": true,
+   "language": "python",
+   "sourceType": "notebook"
+  },
+  "kernelspec": {
+   "display_name": "Python 3",
+   "language": "python",
+   "name": "python3"
+  },
+  "language_info": {
+   "codemirror_mode": {
+    "name": "ipython",
+    "version": 3
+   },
+   "file_extension": ".py",
+   "mimetype": "text/x-python",
+   "name": "python",
+   "nbconvert_exporter": "python",
+   "pygments_lexer": "ipython3",
+   "version": "3.10.12"
+  },
+  "papermill": {
+   "default_parameters": {},
+   "duration": 3.19071,
+   "end_time": "2025-01-20T19:44:12.657818",
+   "environment_variables": {},
+   "exception": null,
+   "input_path": "__notebook__.ipynb",
+   "output_path": "__notebook__.ipynb",
+   "parameters": {},
+   "start_time": "2025-01-20T19:44:09.467108",
+   "version": "2.6.0"
+  }
+ },
+ "nbformat": 4,
+ "nbformat_minor": 5
+}
